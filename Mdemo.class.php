@@ -11,9 +11,7 @@ class Mdemo extends Mcontroller {
 	 * show the frame page with the header, footer and the jquery UI tab center setup.
 	 */
 	public function index() {
-		$this->Mview->showTpl("mdemo.tpl", array(
-			"M" => M_URL,
-		));
+		$this->Mview->showTpl("mdemo.tpl");
 	}
 	/*------------------------------------------------------------*/
 }

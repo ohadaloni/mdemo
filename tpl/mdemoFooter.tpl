@@ -29,5 +29,5 @@ class Authors extends Mtable {
 </td></tr></table>
 {/literal}
 </div>
-<div class="copy">&copy; <a style="color:white" href="everything.php">Copyright Ohad Aloni. 2018. All Rights Reserved.</a><br /></div>
+<div class="copy">&copy; Copyright Ohad Aloni. 2020. All Rights Reserved.<br /></div>
 {/if}

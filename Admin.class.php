@@ -64,7 +64,6 @@ class Admin extends Mcontroller {
 		else
 			$theTitle = $pfx;
 		$this->Mview->showTpl("mdemoHead.tpl", array(
-			"M" => M_URL,
 			'title' => $theTitle,
 		));
 	}

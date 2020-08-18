@@ -13,7 +13,6 @@ date_default_timezone_set("Asia/Jerusalem");
 global $Mview;
 global $Mmodel;
 $Mview = new Mview;
-$Mview->assign("M", M_URL);
 $Mmodel = new Mmodel;
 /*------------------------------------------------------------*/
 /**

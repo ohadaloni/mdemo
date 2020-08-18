@@ -28,8 +28,6 @@
 	<script type="text/javascript" src="js/jquery.showImage.js"></script>
 	<link rel="stylesheet" href="css/jquery.wysiwyg.css" type="text/css"></link>
 	<link rel="stylesheet" type="text/css" href="js/jquery-tooltip/jquery.tooltip.css"></link>
-	<script type="text/javascript" src="{$M}/js/Mutils.js"></script>
-	<link rel="stylesheet" type="text/css" href="{$M}/css/M.css"></link>
 	{if $seo}
 		<script type="text/javascript" src="js/seo.js"></script>
 	{else}

@@ -28,7 +28,13 @@ function containingTab(obj)
 /*------------------------------------------------------------*/
 function mdemoPaintRows(context)
 {
-	mPaintRows();
+	$(".mRow", context).hoverClass("hilite");
+	$(".mFormRow", context).hoverClass("hilite");
+	$(".mHeaderRow", context).addClass("zebra0");
+	$(".mFormRow:nth-child(odd)", context).addClass("zebra1");
+	$(".mFormRow:nth-child(even)", context).addClass("zebra2");
+	$(".mRow:nth-child(odd)", context).addClass("zebra1");
+	$(".mRow:nth-child(even)", context).addClass("zebra2");
 	$(".mdemoRow", context).hoverClass("hilite");
 	$(".mdemoFormRow", context).hoverClass("hilite");
 	$(".mdemoHeaderRow", context).addClass("zebra0");

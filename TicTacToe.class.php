@@ -98,7 +98,7 @@ class TicTacToe extends Mcontroller {
 	private function next() {
 		$this->menu();
 		if ( $this->isWinner(YOU)) {
-			$this->Mview->msg("Contratz. You win. Wanna Play Again?");
+			$this->Mview->msg("Congratz. You win. Wanna Play Again?");
 			$this->show(true);
 			return;
 		}

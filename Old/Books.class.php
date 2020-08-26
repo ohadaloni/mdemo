@@ -20,7 +20,7 @@ class Books extends Mtable {
 	/*------------------------------------------------------------*/
 	public static function bookAuthor($authorId) {
 		$m = new Mmodel;
-		return($m->getString("select concat(first, ' ', last) from authors where id = $authorId"));
+		return($this->Mmodel->getString("select concat(first, ' ', last) from authors where id = $authorId"));
 	}
 	/*------------------------------------------------------------*/
 }

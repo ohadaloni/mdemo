@@ -74,15 +74,6 @@ function mdemoBindAll(context)
 		$(this).addClass("keepHilited");
 	});
 	$(".autocomplete", context).Mautocomplete();
-	$(".jeditable", context).editable("?className=Mmodel&action=saveFieldInfo", { placeholder:'',tooltip:'Click to Edit'});
-	$(".jeditableText", context).editable('?className=Mmodel&action==saveFieldInfo', { 
-		type      : 'wysiwyg',
-		tooltip   : 'Click to Edit...',
-		onblur    : 'ignore', /* don't set this to cancel with wysiwyg */
-		submit    : 'OK',
-		placeholder    : '',
-		cancel    : 'Cancel'
-		});
 
 	$(".datepicker", context).datepicker({
 		changeYear: true 

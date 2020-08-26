@@ -16,9 +16,7 @@
 	<link type="text/css" href="js/jquery-ui-1.8.5.custom/development-bundle/themes/base/jquery.ui.dialog.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery.validate.js"></script>
 	<script type="text/javascript" src="js/jquery.form.js"></script>
-	<script type="text/javascript" src="js/jquery.jeditable.js"></script>
 	<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
-	<script type="text/javascript" src="js/jquery.jeditable.wysiwyg.js"></script>
 	<script type="text/javascript" src="js/jquery-tooltip/lib/jquery.dimensions.js"></script>
 	<script type="text/javascript" src="js/jquery-tooltip/jquery.tooltip.js"></script>
 	<script type="text/javascript" src="js/jquery.imgToolTip.js"></script>

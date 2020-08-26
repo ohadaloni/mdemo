@@ -11,7 +11,6 @@
 		<li><a class="noHijax tabLabel" href="?className=Joins"><span>Join Tutorial</span></a></li>
 		<li><a class="noHijax tabLabel" href="?className=Cal"><span>Calendar</span></a></li>
 		<li><a class="noHijax tabLabel" href="?className=ShowSource"><span>See the Source Code</span></a></li>
-		<!--	<li><a class="noHijax tabLabel" href="?className=Mview&action=showTpl&tpl=admin.tpl"><span>Admin</span></a></li>	-->
 	</ul>
 </div>
 {msuShowTpl file="mdemoFooter.tpl"}

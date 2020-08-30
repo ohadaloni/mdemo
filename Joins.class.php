@@ -33,7 +33,8 @@ class Joins extends Mcontroller {
 		foreach ( $queries as $query ) {
 			Mview::msg($query['title'], true);
 			Mview::msg($query['sql']);
-			$this->showRows($query['sql'], true, $query['exportFileName']);
+			$rows = $this->Mmodel->getRows($query['sql']);
+			$this->showRows($rows, true, $query['exportFileName']);
 			echo "<br /><br />\n";
 		}
 		$file = "Joins.class.php";

@@ -6,6 +6,8 @@ define('ME', 'O');
 class TicTacToe extends Mdemo {
 	/*------------------------------------------------------------*/
 	private $game;
+	private $gameOver;
+	private $ttl = 3600;
 	/*------------------------------------------------------------*/
 	/**
 	 * the default action is to start a new game.
@@ -28,9 +30,20 @@ class TicTacToe extends Mdemo {
 			array(null, null, null,),
 			array(null, null, null,),
 		);
-		$_SESSION['game'] = $this->game;
+		$this->setGame();
 		$this->show();
 	}
+	/*------------------------------------------------------------*/
+	private function setGame() {
+		$json = json_encode($this->game);
+		$this->Mview->setCookie("ticTacToe", $json,  $this->ttl);
+	}
+	/*------------------------------------------------------------*/
+	private function getGame() {
+		$json = @$_COOKIE['ticTacToe'];
+		$this->game = json_decode($json, true);
+	}
+	/*------------------------------------------------------------*/
 	/*------------------------------------------------------------*/
 	/**
 	 * a player's move:
@@ -39,11 +52,12 @@ class TicTacToe extends Mdemo {
 	 */
 
 	public function play() {
-		$this->game = $_SESSION['game'];
+		$this->getGame();
 		$x = $_REQUEST['x'];
 		$y = $_REQUEST['y'];
 		$this->game[$x][$y] = YOU;
 		$this->next();
+		$this->show();
 	}
 	/*------------------------------------------------------------*/
 	/*------------------------------------------------------------*/
@@ -51,10 +65,10 @@ class TicTacToe extends Mdemo {
 	 * show the board
 	 * if the game is over then game buttons are deactivated
 	 */
-	private function show($gameOver = false) {
+	private function show() {
 		$this->Mview->showTpl("ticTacToe.tpl", array(
 			'game' => $this->game,
-			'active' => ! $gameOver,
+			'active' => ! $this->gameOver,
 		));
 	}
 	/*------------------------------------------------------------*/
@@ -67,15 +81,14 @@ class TicTacToe extends Mdemo {
 	 * otherwise, make the move, and again check if the game is over.
 	 */
 	private function next() {
-		$this->menu();
 		if ( $this->isWinner(YOU)) {
 			$this->Mview->msg("Congratz. You win. Wanna Play Again?");
-			$this->show(true);
+			$this->gameOver = true;
 			return;
 		}
 		if ( $this->isTie() ) {
 			$this->Mview->msg("Tie. Wanna Play Again?");
-			$this->show(true);
+			$this->gameOver = true;
 			return;
 		}
 
@@ -83,12 +96,11 @@ class TicTacToe extends Mdemo {
 
 		if ( $this->isWinner(ME)) {
 			$this->Mview->msg(":-(  Wanna Play Again?");
-			$this->show(true);
+			$this->gameOver = true;
 			return;
 		}
 
-		$_SESSION['game'] = $this->game;
-		$this->show();
+		$this->setGame();
 	}
 	/*------------------------------------------------------------*/
 	/**

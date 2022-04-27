@@ -9,8 +9,8 @@
 					<img border="0" src="/images/ticTacToeO.png">
 				{else}
 					{if $active}
-						<a href="/TicTacToe/play"><img border="0"
-							src="/images/ticTacToe.png" title="click to play" alt="click to play"></a>
+						<a href="/TicTacToe/play?x={$x}&y={$y}"><img border="0"
+							src="/images/ticTacToe.png" title="click to play"></a>
 					{else}
 						<img border="0" src="/images/ticTacToe.png">
 					{/if}

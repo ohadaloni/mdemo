@@ -7,44 +7,36 @@
 					<td>Last Name</td>
 				</tr>
 				{foreach from=$authors item=author}
-					<tr class="mdemoRow">
+					<tr
+						{if $author.id == $authorId}
+							class="keepHilited"
+						{else}
+							class="mdemoRow"
+						{/if}
+					>
 						<td>{$author.first}</td>
-						<td class="authorLastName" id="{$author.id}">{$author.last}</td>
-					</tr>
-				{/foreach}
-			</table>
-		</td>
-		<td valign="top">
-			{ if
-			}authorId
-		</td>
-	</tr>
-</table>
-
-
-
-<table border="0">
-	<tr>
-		<td valign="top">
-			<table border="0">
-				<tr class="mdemoHeaderRow">
-					<td>File Name</td>
-				</tr>
-				{foreach from=$files key=name item=file}
-					<tr class="mdemoRow">
 						<td>
-							<a href="/showSource?file={$file}">{$name}</a>
+							<a href="/authors?authorId={$author.id}">{$author.last}</a>
 						</td>
 					</tr>
 				{/foreach}
-				</tr>
 			</table>
 		</td>
 		<td valign="top">
-			{if $source}
-				<h4>{$sourceFileName}</h4>
-				{$source}
+			{if $authorId}
+				<table border="0">
+					<tr class="mdemoHeaderRow">
+						<td>Book Titles</td>
+					</tr>
+					{foreach from=$books item=book}
+						<tr class="mdemoRow">
+							<td>{$book.title}</td>
+						</tr>
+					{/foreach}
+				</table>
 			{/if}
 		</td>
 	</tr>
 </table>
+
+

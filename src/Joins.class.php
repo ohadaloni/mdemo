@@ -31,15 +31,16 @@ class Joins extends Mdemo {
 			),
 		);
 		foreach ( $queries as $query ) {
-			Mview::msg($query['title'], true);
-			Mview::msg($query['sql']);
+			$this->Mview->msg($query['title'], true);
+			$this->Mview->msg($query['sql']);
 			$rows = $this->Mmodel->getRows($query['sql']);
 			$this->showRows($rows, true, $query['exportFileName']);
-			echo "<br /><br />\n";
+			$this->Mview->br(2);
 		}
 		$file = "Joins.class.php";
-		Mview::msg($file);
-		highlight_file($file);
+		$this->Mview->msg($file);
+		$out = highlight_file($file, true);
+		$this->Mview->pushOutput($out);
 	}
 	/*------------------------------------------------------------*/
 }

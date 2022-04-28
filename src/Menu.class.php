@@ -18,29 +18,35 @@ class Menu extends Mcontroller {
 					'url' => "/",
 				),
 				array(
+					'about' => 'about',
+					'title' => 'About',
+					'url' => "/mdemo/about",
+				),
+			),
+			'Library' => array(
+				array(
 					'name' => 'authors',
 					'title' => 'Authors and Books',
 					'url' => "/authors",
-				),
-				array(
-					'name' => 'cal',
-					'title' => 'YAC (Yet Another Calendar)',
-					'url' => "/cal",
 				),
 				array(
 					'name' => 'joins',
 					'title' => 'joins',
 					'url' => "/joins",
 				),
-				array(
-					'name' => 'source',
-					'title' => 'Show Source Code',
-					'url' => "/showSource",
-				),
+			),
+			'Games' => array(
 				array(
 					'name' => 'tictactoe',
 					'title' => 'Tic Tac Toe',
 					'url' => "/tictactoe",
+				),
+			),
+			'Source Code' => array(
+				array(
+					'name' => 'source',
+					'title' => 'Show Source Code',
+					'url' => "/showSource",
 				),
 			),
 		);

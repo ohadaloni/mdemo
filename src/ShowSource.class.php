@@ -3,7 +3,17 @@
 class ShowSource extends Mdemo {
 	/*------------------------------------------------------------*/
 	public function index() {
-		$this->menu();
+		$file = @$_REQUEST['file'];
+		if ( $file ) {
+			$parts = explode("/", $file);
+			$sourceFileName = end($parts);
+			$source = highlight_file($file, true);
+		}
+		$this->Mview->showTpl("showSource.tpl", array(
+			'files' => $this->fileList(),
+			'sourceFileName' => @$sourceFileName,
+			'source' => @$source,
+		));
 	}
 	/*------------------------------------------------------------*/
 	public function fileList() {
@@ -11,7 +21,6 @@ class ShowSource extends Mdemo {
 		$files = array(
 			"index.php",
 			"Mdemo.class.php",
-			"tpl/mdemo.tpl",
 			"Authors.class.php",
 			"TicTacToe.class.php",
 			"Joins.class.php",
@@ -21,23 +30,14 @@ class ShowSource extends Mdemo {
 			"$mdir/Mview.class.php",
 			"$mdir/Mcontroller.class.php",
 		);
-		return($files);
-	}
-	/*------------------------------------------------------------*/
-	public function menu() {
-		$this->Mview->showTpl("showSource.menu.tpl", array(
-			'files' => $this->fileList(),
-		));
-	}
-	/*------------------------------------------------------------*/
-	public function showFile($file = null) {
-		if ( ! $file ) {
-			$fileId = $_REQUEST['fileId'];
-			$files = $this->fileList();
-			$file = $files[$fileId];
+		$fileList = array();
+		foreach ( $files as $file ) {
+			$parts = explode("/", $file);
+			$name = end($parts);
+			$fileList[$name] = $file ;
 		}
-		echo "<h4>$file</h4>\n";
-		highlight_file($file);
+			
+		return($fileList);
 	}
 	/*------------------------------------------------------------*/
 }

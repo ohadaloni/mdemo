@@ -81,13 +81,16 @@ class TicTacToe extends Mdemo {
 	 * otherwise, make the move, and again check if the game is over.
 	 */
 	private function next() {
+		$tellOptions = array(
+			'url' => "/TicTacToe",
+		);
 		if ( $this->isWinner(YOU)) {
-			$this->Mview->msg("Congratz. You win. Wanna Play Again?");
+			$this->Mview->tell("Congratz. You win. Wanna Play Again?", $tellOptions);
 			$this->gameOver = true;
 			return;
 		}
 		if ( $this->isTie() ) {
-			$this->Mview->msg("Tie. Wanna Play Again?");
+			$this->Mview->tell("Tie. Wanna Play Again?", $tellOptions);
 			$this->gameOver = true;
 			return;
 		}
@@ -95,7 +98,7 @@ class TicTacToe extends Mdemo {
 		$this->move();
 
 		if ( $this->isWinner(ME)) {
-			$this->Mview->msg(":-(  Wanna Play Again?");
+			$this->Mview->tell(":-(  Wanna Play Again?", $tellOptions);
 			$this->gameOver = true;
 			return;
 		}

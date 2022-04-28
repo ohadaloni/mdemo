@@ -10,6 +10,13 @@ class Menu extends Mcontroller {
 	/*------------------------------------------------------------*/
 	/*------------------------------------------------------------*/
 	private function dd() {
+		$thisMonth = date("n");
+		$thisYear = date("Y");
+		$prevMonth = ($thisMonth - 1 + 12)%12  ;
+		$nextMonth = ($thisMonth + 1)%12  ;
+		$thisMonthName = Mdate::monthLname($thisMonth);
+		$prevMonthName = Mdate::monthLname($prevMonth);
+		$nextMonthName = Mdate::monthLname($nextMonth);
 		$menu = array(
 			'mdemo' => array(
 				array(
@@ -21,6 +28,28 @@ class Menu extends Mcontroller {
 					'about' => 'about',
 					'title' => 'About',
 					'url' => "/mdemo/about",
+				),
+			),
+			'YACC' => array(
+				array(
+					'name' => 'cal',
+					'title' => 'Yet Another Calendar Calendar',
+					'url' => "/cal",
+				),
+				array(
+					'name' => 'prevMonth',
+					'title' => $prevMonthName,
+					'url' => "/cal/prevMonth?month=$thisMonth&year=$thisYear",
+				),
+				array(
+					'name' => 'thisMonth',
+					'title' => $thisMonthName,
+					'url' => "/cal",
+				),
+				array(
+					'name' => 'nextMonth',
+					'title' => $nextMonthName,
+					'url' => "/cal/nextMonth?month=$thisMonth&year=$thisYear",
 				),
 			),
 			'Library' => array(

@@ -5,13 +5,15 @@ require_once(M_DIR."/mfiles.php");
 require_once("mdemoFiles.php");
 require_once("Mdemo.class.php");
 /*------------------------------------------------------------*/
+$startTime = microtime(true);
+/*------------------------------------------------------------*/
 global $Mview;
 global $Mmodel;
 $Mview = new Mview;
 $Mmodel = new Mmodel;
 $Mview->holdOutput();
 /*------------------------------------------------------------*/
-$mdemo = new Mdemo;
+$mdemo = new Mdemo($startTime);
 $mdemo->control();
 $Mview->flushOutput();
 /*------------------------------------------------------------*/

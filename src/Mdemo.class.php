@@ -6,15 +6,15 @@ class Mdemo extends Mcontroller {
 	/*------------------------------*/
 	private $startTime;
 	/*------------------------------------------------------------*/
-	public function __construct() {
+	public function __construct($startTime) {
 		parent::__construct();
+		$this->startTime = $startTime;
 		$this->mdemoUtils = new MdemoUtils;
 	}
 	/*------------------------------------------------------------*/
 	/*------------------------------------------------------------*/
 	protected function before() {
 		$this->mdemoUtils->prior($this->controller, $this->action);
-		$this->startTime = microtime(true);
 		$this->Mview->assign(array(
 			'controller' => $this->controller,
 			'action' => $this->action,

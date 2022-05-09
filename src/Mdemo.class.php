@@ -3,12 +3,9 @@
 class Mdemo extends Mcontroller {
 	/*------------------------------------------------------------*/
 	protected $mdemoUtils;
-	/*------------------------------*/
-	private $startTime;
 	/*------------------------------------------------------------*/
-	public function __construct($startTime) {
+	public function __construct() {
 		parent::__construct();
-		$this->startTime = $startTime;
 		$this->mdemoUtils = new MdemoUtils;
 	}
 	/*------------------------------------------------------------*/
@@ -39,7 +36,6 @@ class Mdemo extends Mcontroller {
 	protected function after() {
 		if ( ! $this->showMargins())
 			return;
-		$this->Mview->runningTime($this->startTime);
 		$this->Mview->showTpl("footer.tpl");
 		$this->Mview->showTpl("foot.tpl");
 	}

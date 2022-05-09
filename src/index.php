@@ -13,7 +13,8 @@ $Mview = new Mview;
 $Mmodel = new Mmodel;
 $Mview->holdOutput();
 /*------------------------------------------------------------*/
-$mdemo = new Mdemo($startTime);
+$mdemo = new Mdemo;
+$mdemo->setStartTime($startTime);
 $mdemo->control();
 $Mview->flushOutput();
 /*------------------------------------------------------------*/

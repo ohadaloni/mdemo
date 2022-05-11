@@ -36,7 +36,7 @@ class TicTacToe extends Mdemo {
 	/*------------------------------------------------------------*/
 	private function setGame() {
 		$json = json_encode($this->game);
-		$this->Mview->setCookie("ticTacToe", $json,  $this->ttl);
+		$this->Mview->setCookie("ticTacToe", $json, $this->ttl);
 	}
 	/*------------------------------------------------------------*/
 	private function getGame() {
@@ -98,7 +98,7 @@ class TicTacToe extends Mdemo {
 		$this->move();
 
 		if ( $this->isWinner(ME)) {
-			$this->Mview->tell(":-(  Wanna Play Again?", $tellOptions);
+			$this->Mview->tell(":-( Wanna Play Again?", $tellOptions);
 			$this->gameOver = true;
 			return;
 		}

@@ -102,7 +102,7 @@ class Mdemo extends Mcontroller {
 		$http_x_requested_with = @$_SERVER['HTTP_X_REQUESTED_WITH'];
 		$isAjax =
 			$http_x_requested_with &&
-			strtolower($http_x_requested_with) == "xmlhttprequest" ;
+			strtolower($http_x_requested_with) == "xmlhttprequest";
 		return($isAjax);
 	}
 	/*------------------------------*/

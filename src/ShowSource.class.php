@@ -17,7 +17,7 @@ class ShowSource extends Mdemo {
 	}
 	/*------------------------------------------------------------*/
 	public function fileList() {
-		$mdir = M_DIR ;
+		$mdir = M_DIR;
 		$files = array(
 			"index.php",
 			"Mdemo.class.php",
@@ -34,7 +34,7 @@ class ShowSource extends Mdemo {
 		foreach ( $files as $file ) {
 			$parts = explode("/", $file);
 			$name = end($parts);
-			$fileList[$name] = $file ;
+			$fileList[$name] = $file;
 		}
 			
 		return($fileList);

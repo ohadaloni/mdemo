@@ -12,8 +12,8 @@ class Menu extends Mcontroller {
 	private function dd() {
 		$thisMonth = date("n");
 		$thisYear = date("Y");
-		$prevMonth = ($thisMonth - 1 + 12)%12  ;
-		$nextMonth = ($thisMonth + 1)%12  ;
+		$prevMonth = ($thisMonth - 1 + 12)%12 ;
+		$nextMonth = ($thisMonth + 1)%12 ;
 		$thisMonthName = Mdate::monthLname($thisMonth);
 		$prevMonthName = Mdate::monthLname($prevMonth);
 		$nextMonthName = Mdate::monthLname($nextMonth);

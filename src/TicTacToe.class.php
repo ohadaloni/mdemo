@@ -261,7 +261,7 @@ class TicTacToe extends Mdemo {
 	private function place($x, $y) {
 		if ( $this->game[$x][$y] != null )
 			return(false);
-		$this->game[$x][$y] = ME ;
+		$this->game[$x][$y] = ME;
 		return(true);
 	}
 	/*------------------------------------------------------------*/
